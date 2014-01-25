@@ -12,26 +12,47 @@ public class PlayerController : MonoBehaviour {
 	public float jumpForce = 100f;
 	public float moveForce = 20f;
 
-	bool isGrounded =false;
+	public bool isGrounded =false;
+	public bool is2D = true;
 	public bool isFacingRight =true;
+	public bool controlPlayer = true;
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		MovePlayer ();
-
-		Jump ();
-
 		float horizontalMovement = Input.GetAxis ("Horizontal");
 
-		//flip player around
-		// If the input is moving the player right and the player is facing left...
-		if(horizontalMovement > 0 && !isFacingRight)
-			// ... flip the player.
-			FlipSprite();
-		// Otherwise if the input is moving the player left and the player is facing right...
-		else if(horizontalMovement < 0 && isFacingRight)
-			// ... flip the player.
-			FlipSprite();
+		print ("Horizontal Movement: "+horizontalMovement);
+
+		if(controlPlayer){
+			if(is2D){
+				MovePlayer2D ();
+				Jump2D ();
+
+				//flip player around
+				// If the input is moving the player right and the player is facing left...
+				if(horizontalMovement > 0 && !isFacingRight)
+					// ... flip the player.
+					FlipSprite();
+				// Otherwise if the input is moving the player left and the player is facing right...
+				else if(horizontalMovement < 0 && isFacingRight)
+					// ... flip the player.
+					FlipSprite();
+			}
+			else{
+				MovePlayer ();
+				Jump ();
+
+				//flip player around
+				// If the input is moving the player right and the player is facing left...
+				if(horizontalMovement > 0 && !isFacingRight)
+					// ... flip the player.
+					FlipObject();
+				// Otherwise if the input is moving the player left and the player is facing right...
+				else if(horizontalMovement < 0 && isFacingRight)
+					// ... flip the player.
+					FlipObject();
+			}
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
@@ -42,25 +63,42 @@ public class PlayerController : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D other){
 		isGrounded=false;
 		Debug.Log("in air");
-
 	}
 
-	void OnCollisionEnter(Collision	other)
-	{
-		Debug.Log("3d");
+	void OnCollisionEnter(Collision other){
+		isGrounded=true;
+		Debug.Log("grounded");
+	}
+	
+	void OnCollisionExit(Collision other){
+		isGrounded=false;
+		Debug.Log("in air");
 	}
 
-	void MovePlayer(){
+	void MovePlayer2D(){
 		float horizontalMovement = Input.GetAxis ("Horizontal");
 		Vector2 movement = new Vector2(horizontalMovement, 0);
 		
 		rigidbody2D.AddForce(movement * moveForce);
 	}
 
-	void Jump(){
+	void Jump2D(){
 		Vector2 jumpVelocity = new Vector2(0, jumpForce);
 		if(Input.GetButtonDown ("Jump") && isGrounded)
 			rigidbody2D.AddForce(jumpVelocity);
+	}
+
+	void MovePlayer(){
+		float horizontalMovement = Input.GetAxis ("Horizontal");
+		Vector2 movement = new Vector2(horizontalMovement, 0);
+		
+		rigidbody.AddForce(movement * moveForce);
+	}
+	
+	void Jump(){
+		Vector2 jumpVelocity = new Vector2(0, jumpForce);
+		if(Input.GetButtonDown ("Jump") && isGrounded)
+			rigidbody.AddForce(jumpVelocity);
 	}
 
 	void FlipSprite(){
@@ -73,4 +111,11 @@ public class PlayerController : MonoBehaviour {
 		transform.localScale = playerScale;
 	}
 
+	void FlipObject(){
+		isFacingRight = !isFacingRight;
+
+		Vector3 playerRotation = transform.rotation.eulerAngles;
+		playerRotation.y *= -1;
+		transform.rotation = Quaternion.Euler (playerRotation);
+	}
 }
