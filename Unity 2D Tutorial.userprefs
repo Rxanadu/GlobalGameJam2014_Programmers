@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\ProjectileLauncher.cs">
+    <Files>
+      <File FileName="Assets\Resources\Scripts\PlayerController.cs" Line="16" Column="26" />
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="55" Column="38" />
+      <File FileName="Assets\Resources\Scripts\ProjectileLauncher.cs" Line="36" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
