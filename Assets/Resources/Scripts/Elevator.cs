@@ -46,8 +46,8 @@ public class Elevator : MonoBehaviour
         //move player up a level
         if (movingUp && !movingDown)
         {
-            if (clearance >= (int)nextFloor.y)//clearance added
-            {
+            //if (clearance >= (int)nextFloor.y)//clearance added
+           // {
                 for (int i = 0; i < floors.Length; i++)
                 {
                     if (floors[i].position.y == transform.parent.position.y)
@@ -62,11 +62,11 @@ public class Elevator : MonoBehaviour
                         movingUp = false;
                     }
                 }
-            }
-            else
-            {
-                movingUp = false;
-            }
+           // }
+           // else
+           // {
+           //     movingUp = false;
+           // }
 
         }
 

@@ -13,6 +13,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -213,6 +214,20 @@ MonoBehaviour:
   projectile: {fileID: 5400000, guid: 3a8c55236575cfd46af8d7e2aecd3a80, type: 2}
   speed: 20
   using2D: 0
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b3f3d290bef514d820f3ef8a4b8fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  maxHealth: 10
+  icon: {fileID: 2800000, guid: 08459036be7d12c468cd504e83c9c915, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

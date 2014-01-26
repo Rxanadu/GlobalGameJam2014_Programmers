@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour {
 			if(is2D){
 				MovePlayer2D ();
 				Jump2D ();
-
 				//flip player around
 				// If the input is moving the player right and the player is facing left...
 				if(horizontalMovement > 0 && !isFacingRight)
@@ -98,6 +97,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Jump2D(){
+		Debug.Log("2d jump");
 		Vector2 jumpVelocity = new Vector2(0, jumpForce);
 		if(Input.GetButtonDown ("Jump") && isGrounded)
 			rigidbody2D.AddForce(jumpVelocity);
@@ -128,6 +128,8 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void Jump(){
+		Debug.Log("3d jump");
+
 		Vector2 jumpVelocity = new Vector2(0, jumpForce);
 		if(Input.GetButtonDown ("Jump") && isGrounded)
 			rigidbody.AddForce(jumpVelocity);

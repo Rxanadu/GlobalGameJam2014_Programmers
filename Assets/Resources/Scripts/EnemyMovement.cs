@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     bool playerDetected;
     bool movingToNode;
     PlayerHealth playerHealth;
+    Vector3 nextNode;
 
     // Use this for initialization
     void Start()
@@ -27,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
         transform.position = firstNode.position;
         playerDetected = false;
         movingToNode = true;
+        nextNode = firstNode.position;
     }
 
     // Update is called once per frame
@@ -82,7 +84,6 @@ public class EnemyMovement : MonoBehaviour
 
     void TravelToNode()
     {
-        Vector3 nextNode = Vector3.zero;
         float step = speed * Time.deltaTime;
 
         if (transform.position.x == firstNode.position.x)
