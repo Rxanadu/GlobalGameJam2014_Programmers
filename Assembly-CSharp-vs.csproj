@@ -46,15 +46,41 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Resources\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Scripts\CollisionWith3DObjects.cs" />
+     <Compile Include="Assets\Resources\Scripts\Credits.cs" />
      <Compile Include="Assets\Resources\Scripts\Elevator.cs" />
-     <Compile Include="Assets\Resources\Scripts\ElevatorTrigger.cs" />
      <Compile Include="Assets\Resources\Scripts\EndGame.cs" />
      <Compile Include="Assets\Resources\Scripts\EndGameOnTriggerEnter.cs" />
      <Compile Include="Assets\Resources\Scripts\EndMusic.cs" />
+     <Compile Include="Assets\Resources\Scripts\EnemyMovement.cs" />
+     <Compile Include="Assets\Resources\Scripts\HowToPlay.cs" />
+     <Compile Include="Assets\Resources\Scripts\KeyCard.cs" />
+     <Compile Include="Assets\Resources\Scripts\LoadGame.cs" />
+     <Compile Include="Assets\Resources\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuController.cs" />
+     <Compile Include="Assets\Resources\Scripts\Options.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Resources\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Resources\Scripts\ProjectileLauncher.cs" />
+     <Compile Include="Assets\Resources\Scripts\SpawnpointManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Tags.cs" />
+     <Compile Include="Assets\Resources\Scripts\WaterCooler.cs" />
+     <Compile Include="Assets\SoundManagerPro\Demo\DemoTwo.cs" />
+     <Compile Include="Assets\SoundManagerPro\EditorHelper\EditorUpdateCheck.cs" />
+     <Compile Include="Assets\SoundManagerPro\EditorHelper\EditorVariableStorage.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Classes\SFXGroup.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Classes\SoundConnection.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Extensions\SoundManagerTools.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Managers\Singleton.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_Essentials.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_Internal.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_SFX.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_SFX_Internal.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_Variables_Music.cs" />
+     <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_Variables_SFX.cs" />
+     <None Include="Assets\Resources\Text\test-text.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

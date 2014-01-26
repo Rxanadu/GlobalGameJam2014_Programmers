@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 		float horizontalMovement = Input.GetAxis ("Horizontal");
 
-		print ("Horizontal Movement: "+horizontalMovement);
+		//print ("Horizontal Movement: "+horizontalMovement);
 
 		if(controlPlayer){
 			if(is2D){
@@ -77,6 +77,17 @@ public class PlayerController : MonoBehaviour {
 
 	void MovePlayer2D(){
 		float horizontalMovement = Input.GetAxis ("Horizontal");
+
+        // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
+        if (horizontalMovement * rigidbody2D.velocity.x < maxSpeed)
+            // ... add a force to the player.
+            rigidbody2D.AddForce(Vector2.right * horizontalMovement * moveForce);
+
+        // If the player's horizontal velocity is greater than the maxSpeed...
+        if (Mathf.Abs(rigidbody2D.velocity.x) > maxSpeed)
+            // ... set the player's velocity to the maxSpeed in the x axis.
+            rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
+
 		Vector2 movement = new Vector2(horizontalMovement, 0);
 		
 		rigidbody2D.AddForce(movement * moveForce);
@@ -90,6 +101,17 @@ public class PlayerController : MonoBehaviour {
 
 	void MovePlayer(){
 		float horizontalMovement = Input.GetAxis ("Horizontal");
+
+        // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
+        if (horizontalMovement * rigidbody.velocity.x < maxSpeed)
+            // ... add a force to the player.
+            rigidbody.AddForce(Vector3.right * horizontalMovement * moveForce);
+
+        // If the player's horizontal velocity is greater than the maxSpeed...
+        if (Mathf.Abs(rigidbody.velocity.x) > maxSpeed)
+            // ... set the player's velocity to the maxSpeed in the x axis.
+            rigidbody.velocity = new Vector2(Mathf.Sign(rigidbody.velocity.x) * maxSpeed, rigidbody.velocity.y);
+
 		Vector2 movement = new Vector2(horizontalMovement, 0);
 		
 		rigidbody.AddForce(movement * moveForce);

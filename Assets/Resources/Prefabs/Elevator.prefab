@@ -126,13 +126,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 716e24c17ca79474a88d4aab0dc6661c, type: 3}
+  m_Script: {fileID: 11500000, guid: 443a5caffd3273d47906b6c0e92dd17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   floors:
   - {fileID: 0}
   - {fileID: 0}
   speed: 10
+  clearance: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -11,11 +11,14 @@ public class EndGame : MonoBehaviour {
 
 	PlayerController playerController;
 	EndMusic endMusic;
+    PlayerHealth playerHealth;
 
+    
 	void Start(){
 		player = GameObject.FindGameObjectWithTag (Tags.player);
 		musicController = GameObject.FindGameObjectWithTag (Tags.musicController);
 		endMusicController = GameObject.FindGameObjectWithTag (Tags.endMusicController);
+        playerHealth = GameObject.FindGameObjectWithTag(Tags.playerHealth).GetComponent<PlayerHealth>();
 
 		playerController = player.GetComponent<PlayerController>();
 		endMusic = endMusicController.GetComponent<EndMusic>();
@@ -23,6 +26,14 @@ public class EndGame : MonoBehaviour {
 		levelCompleteMessage = "LEVEL\n COMPLETE";
 		endGameText.enabled=false;
 	}
+
+    void Update()
+    {
+        if (playerHealth.Health <= 0)
+        {
+            EndGameInDefeat();
+        }
+    }
 
 	public void EndGameInDefeat(){
 		playerController.controlPlayer=false;
