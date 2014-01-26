@@ -54,6 +54,7 @@
      <Compile Include="Assets\Resources\Scripts\EndGameOnTriggerEnter.cs" />
      <Compile Include="Assets\Resources\Scripts\EndMusic.cs" />
      <Compile Include="Assets\Resources\Scripts\KeyCard.cs" />
+     <Compile Include="Assets\Resources\Scripts\MainGUI.cs" />
      <Compile Include="Assets\Resources\Scripts\MainMenuGUI.cs" />
      <Compile Include="Assets\Resources\Scripts\PauseGUI.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayerAudio.cs" />
