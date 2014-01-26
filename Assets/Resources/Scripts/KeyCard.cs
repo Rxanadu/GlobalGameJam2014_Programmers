@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class KeyCheck : MonoBehaviour
+public class KeyCard : MonoBehaviour
 {
 	public static event Action<bool> clearanceUp;
 	// Update is called once per frame

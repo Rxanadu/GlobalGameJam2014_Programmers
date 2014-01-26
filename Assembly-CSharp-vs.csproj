@@ -47,12 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\PlayerStats.cs" />
+     <Compile Include="Assets\Resources\Scripts\ButtonPressed.cs" />
      <Compile Include="Assets\Resources\Scripts\CollisionWith3DObjects.cs" />
      <Compile Include="Assets\Resources\Scripts\Elevator.cs" />
      <Compile Include="Assets\Resources\Scripts\ElevatorTrigger.cs" />
      <Compile Include="Assets\Resources\Scripts\EndGame.cs" />
      <Compile Include="Assets\Resources\Scripts\EndGameOnTriggerEnter.cs" />
      <Compile Include="Assets\Resources\Scripts\EndMusic.cs" />
+     <Compile Include="Assets\Resources\Scripts\InstructionsButton.cs" />
      <Compile Include="Assets\Resources\Scripts\KeyCard.cs" />
      <Compile Include="Assets\Resources\Scripts\MainGUI.cs" />
      <Compile Include="Assets\Resources\Scripts\MainMenuGUI.cs" />
@@ -60,6 +62,7 @@
      <Compile Include="Assets\Resources\Scripts\PlayerAudio.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Resources\Scripts\ProjectileLauncher.cs" />
+     <Compile Include="Assets\Resources\Scripts\SplashGUI.cs" />
      <Compile Include="Assets\Resources\Scripts\Tags.cs" />
      <Compile Include="Assets\SoundManagerPro\Demo\DemoTwo.cs" />
      <Compile Include="Assets\SoundManagerPro\EditorHelper\EditorUpdateCheck.cs" />

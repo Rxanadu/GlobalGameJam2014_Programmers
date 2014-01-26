@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum MenuStates{Main,Credits,HowTo};
+public enum MenuStates2{Main,Credits,HowTo};
 
 public class MainMenuGUI : MonoBehaviour 
 {
 	//this is the script for gui in the main menu
-	public MenuStates currentState;
+	public MenuStates2 currentState;
 	// Use this for initialization
 	void Start () 
 	{
-		currentState = MenuStates.Main;
+		currentState = MenuStates2.Main;
 	}
 	
 	// Update is called once per frame
@@ -18,11 +18,11 @@ public class MainMenuGUI : MonoBehaviour
 	{
 		switch(currentState)
 		{
-		case MenuStates.Main:
+		case MenuStates2.Main:
 			break;
-		case MenuStates.HowTo:
+		case MenuStates2.HowTo:
 			break;
-		case MenuStates.Credits:
+		case MenuStates2.Credits:
 			break;
 		}
 	}
@@ -31,7 +31,8 @@ public class MainMenuGUI : MonoBehaviour
 	{
 		switch(currentState)
 		{
-		case MenuStates.Main:
+		case MenuStates2.Main:
+			/*
 			if (GUI.Button(Rect(Screen.width * 0.25f, Screen.height * 0.25, Screen.width * 0.5f, Screen.height * 0.15f), "Play") == true)
 			{
 				
@@ -43,7 +44,7 @@ public class MainMenuGUI : MonoBehaviour
 			if (GUI.Button(Rect(Screen.width * 0.25f, Screen.height * 0.55, Screen.width * 0.5f, Screen.height * 0.15f), "Credits") == true)			
 			{
 				
-			}
+			}*/
 			break;
 		}
 

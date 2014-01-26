@@ -42,7 +42,7 @@ public class Elevator : MonoBehaviour
 		//move player up a level
 		if(movingUp && !movingDown)
 		{
-			if(clearance >= nextFloor)//clearance added
+			if(clearance >= nextFloor.y)//clearance added
 			{
 				for(int i = 0;i<floors.Length;i++)
 				{
