@@ -11,11 +11,14 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed = 5f;
 	public float jumpForce = 100f;
 	public float moveForce = 20f;
+    public float detectionDistance = 3f;
 
 	public bool isGrounded =false;
 	public bool is2D = true;
 	public bool isFacingRight =true;
 	public bool controlPlayer = true;
+
+    public AudioClip[] walkClips;
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -39,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 					FlipSprite();
 			}
 			else{
+                DetectGroundCollision();
 				MovePlayer ();
 				Jump ();
 
@@ -65,15 +69,15 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log("in air");
 	}
 
-	void OnCollisionEnter(Collision other){
-		isGrounded=true;
-		Debug.Log("grounded");
-	}
+    //void OnCollisionEnter(Collision other){
+    //    isGrounded=true;
+    //    Debug.Log("grounded");
+    //}
 	
-	void OnCollisionExit(Collision other){
-		isGrounded=false;
-		Debug.Log("in air");
-	}
+    //void OnCollisionExit(Collision other){
+    //    isGrounded=false;
+    //    Debug.Log("in air");
+    //}
 
 	void MovePlayer2D(){
 		float horizontalMovement = Input.GetAxis ("Horizontal");
@@ -115,6 +119,12 @@ public class PlayerController : MonoBehaviour {
 		Vector2 movement = new Vector2(horizontalMovement, 0);
 		
 		rigidbody.AddForce(movement * moveForce);
+
+        if (Input.GetButton("Horizontal") && isGrounded) {
+            if (audio.clip == null)
+                audio.clip = walkClips[Random.Range(0, walkClips.Length - 1)];
+            audio.Play();
+        }
 	}
 	
 	void Jump(){
@@ -140,4 +150,25 @@ public class PlayerController : MonoBehaviour {
 		playerRotation.y *= -1;
 		transform.rotation = Quaternion.Euler (playerRotation);
 	}
+
+    void DetectGroundCollision() {
+        Ray ray = new Ray(transform.position, -transform.up);
+
+        RaycastHit hit; // declare the RaycastHit variable
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.DrawLine(ray.origin, hit.point);
+            if (hit.transform.tag == Tags.player)
+            {
+                print("Distance: " + Vector3.Distance(transform.position, hit.transform.position));
+                if (Vector3.Distance(transform.position, hit.transform.position) < detectionDistance)
+                {
+                    isGrounded = true;
+                }
+                else {
+                    isGrounded = false;
+                }
+            }
+        }
+    }
 }

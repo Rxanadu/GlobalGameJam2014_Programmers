@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Text\credits.txt">
     <Files>
-      <File FileName="Assets\Resources\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\PlayerController.cs" Line="10" Column="2" />
+      <File FileName="Assets\Resources\Text\credits.txt" Line="11" Column="1" />
+      <File FileName="Assets\Resources\Scripts\PlayerController.cs" Line="144" Column="1" />
       <File FileName="Assets\Resources\Scripts\EndGameOnTriggerEnter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\EndGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Tags.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\EndGame.cs" Line="62" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Tags.cs" Line="19" Column="1" />
       <File FileName="Assets\Resources\Scripts\EndMusic.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\ProjectileLauncher.cs" Line="1" Column="1" />
     </Files>

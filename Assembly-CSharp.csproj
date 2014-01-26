@@ -48,18 +48,22 @@
   <ItemGroup>
      <Compile Include="Assets\Resources\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Scripts\CollisionWith3DObjects.cs" />
-     <Compile Include="Assets\Resources\Scripts\Credits.cs" />
      <Compile Include="Assets\Resources\Scripts\Elevator.cs" />
      <Compile Include="Assets\Resources\Scripts\EndGame.cs" />
      <Compile Include="Assets\Resources\Scripts\EndGameOnTriggerEnter.cs" />
      <Compile Include="Assets\Resources\Scripts\EndMusic.cs" />
      <Compile Include="Assets\Resources\Scripts\EnemyMovement.cs" />
-     <Compile Include="Assets\Resources\Scripts\HowToPlay.cs" />
+     <Compile Include="Assets\Resources\Scripts\GUIButtonSkin.cs" />
      <Compile Include="Assets\Resources\Scripts\KeyCard.cs" />
-     <Compile Include="Assets\Resources\Scripts\LoadGame.cs" />
-     <Compile Include="Assets\Resources\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Resources\Scripts\MenuController.cs" />
-     <Compile Include="Assets\Resources\Scripts\Options.cs" />
+     <Compile Include="Assets\Resources\Scripts\MainMenuDisplay.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuPackage\Credits.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuPackage\HowToPlay.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuPackage\LoadGame.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuPackage\MainMenu.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuPackage\MenuController.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuPackage\Options.cs" />
+     <Compile Include="Assets\Resources\Scripts\OptionMenus.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Resources\Scripts\ProjectileLauncher.cs" />
@@ -80,6 +84,8 @@
      <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_SFX_Internal.cs" />
      <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_Variables_Music.cs" />
      <Compile Include="Assets\SoundManagerPro\Scripts\Managers\SoundManager_Variables_SFX.cs" />
+     <None Include="Assets\Resources\Text\credits.txt" />
+     <None Include="Assets\Resources\Text\HowToPlay_SuperJane.txt" />
      <None Include="Assets\Resources\Text\test-text.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
