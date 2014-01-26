@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour {
 
 		if(controlPlayer){
 			if(is2D){
-				MovePlayer2D ();
-				Jump2D ();
+//				MovePlayer2D ();
+//				Jump2D ();
 
 				//flip player around
 				// If the input is moving the player right and the player is facing left...
@@ -75,18 +75,18 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log("in air");
 	}
 
-	void MovePlayer2D(){
-		float horizontalMovement = Input.GetAxis ("Horizontal");
-		Vector2 movement = new Vector2(horizontalMovement, 0);
+	//void MovePlayer2D(){
+	//	float horizontalMovement = Input.GetAxis ("Horizontal");
+	//	Vector2 movement = new Vector2(horizontalMovement, 0);
 		
-		rigidbody2D.AddForce(movement * moveForce);
-	}
+//		rigidbody2D.AddForce(movement * moveForce);
+	//}
 
-	void Jump2D(){
-		Vector2 jumpVelocity = new Vector2(0, jumpForce);
-		if(Input.GetButtonDown ("Jump") && isGrounded)
-			rigidbody2D.AddForce(jumpVelocity);
-	}
+	//void Jump2D(){
+	//	Vector2 jumpVelocity = new Vector2(0, jumpForce);
+	//	if(Input.GetButtonDown ("Jump") && isGrounded)
+	//		rigidbody2D.AddForce(jumpVelocity);
+//	}
 
 	void MovePlayer(){
 		float horizontalMovement = Input.GetAxis ("Horizontal");
