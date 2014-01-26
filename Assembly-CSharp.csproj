@@ -52,6 +52,7 @@
      <Compile Include="Assets\Resources\Scripts\EndGame.cs" />
      <Compile Include="Assets\Resources\Scripts\EndGameOnTriggerEnter.cs" />
      <Compile Include="Assets\Resources\Scripts\EndMusic.cs" />
+     <Compile Include="Assets\Resources\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Resources\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Resources\Scripts\GUIButtonSkin.cs" />
      <Compile Include="Assets\Resources\Scripts\KeyCard.cs" />

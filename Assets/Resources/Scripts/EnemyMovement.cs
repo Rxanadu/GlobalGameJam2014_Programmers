@@ -5,24 +5,28 @@ public class EnemyMovement : MonoBehaviour
 {
 
     public enum EnemyType { 
-        Straight,Fly
+        Ground,Air
     }
-    public EnemyType enemyType = EnemyType.Straight;
+    public EnemyType enemyType = EnemyType.Ground;
 
     public float detectionDistance;
     public float speed;
     public int healthDamage = 3;
+    public Transform firstNode, secondNode;
+    public float waitTime = 2f;
 
     Transform target;
     bool playerDetected;
+    bool movingToNode;
     PlayerHealth playerHealth;
 
     // Use this for initialization
     void Start()
     {
         playerHealth = GameObject.FindGameObjectWithTag(Tags.playerHealth).GetComponent<PlayerHealth>();
-
+        transform.position = firstNode.position;
         playerDetected = false;
+        movingToNode = true;
     }
 
     // Update is called once per frame
@@ -55,31 +59,55 @@ public class EnemyMovement : MonoBehaviour
 
     void ChangeEnemyType() {
         switch (enemyType) { 
-            case EnemyType.Straight:
-                MoveStraightEnemy();
+            case EnemyType.Ground:
+                if (movingToNode && !playerDetected)
+                {                    
+                    TravelToNode();
+                }
+                else
+                    MoveGroundEnemy();
                 break;
-            case EnemyType.Fly:
-                MoveFlyingEnemy();
+            case EnemyType.Air:
+                MoveAirEnemy();
                 break;
         }
     }
 
-    void MoveFlyingEnemy() {
+    void MoveAirEnemy() {
         if (playerDetected) {
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target.position, step);
         }
     }
 
-    void MoveStraightEnemy() {
+    void TravelToNode()
+    {
+        Vector3 nextNode = Vector3.zero;
+        float step = speed * Time.deltaTime;
+
+        if (transform.position.x == firstNode.position.x)
+        {
+            nextNode = secondNode.position;
+        }
+        if (transform.position.x == secondNode.position.x)
+        {
+            nextNode = firstNode.position;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, nextNode, step);
+    }
+
+    void MoveGroundEnemy() {
         Ray ray = new Ray(transform.position, transform.right);
 
         RaycastHit hit; // declare the RaycastHit variable
         if (Physics.Raycast(ray, out hit))
-        {
+        {            
             Debug.DrawLine(ray.origin, hit.point);
             if (hit.transform.tag == Tags.player)
             {
+                movingToNode = false;
+                playerDetected = true;
                 print("Distance: " + Vector3.Distance(transform.position, hit.transform.position));
                 if (Vector3.Distance(transform.position, hit.transform.position) < detectionDistance)
                 {

@@ -4,6 +4,8 @@ using System.Collections;
 public class WaterCooler : MonoBehaviour
 {
     public int health;
+    public AudioClip waterDrinkClip;
+
     bool activated, used;
     PlayerHealth playerHealth;
 
@@ -18,8 +20,13 @@ public class WaterCooler : MonoBehaviour
     {
         playerHealth = GameObject.FindGameObjectWithTag(Tags.playerHealth).GetComponent<PlayerHealth>();
 
+        if (waterDrinkClip != null)
+            audio.clip = waterDrinkClip;
+
         activated = false;
         used = false;
+        audio.playOnAwake = false;
+        audio.loop = false;
     }
 
     void Update()
@@ -34,8 +41,8 @@ public class WaterCooler : MonoBehaviour
     {
         if (other.gameObject.tag == Tags.player)
         {
-            playerHealth.Health = playerHealth.maxHealth;
-            Destroy(gameObject);
+
+            DrinkWater();
             //if (activated && !used && playerHealth.Health <= 0)
             //{
             //    activated = false;
@@ -48,5 +55,13 @@ public class WaterCooler : MonoBehaviour
         //{
         //    health--;
         //}
+    }
+
+    void DrinkWater() {
+        collider.enabled = false;
+        renderer.enabled = false;
+        playerHealth.Health = playerHealth.maxHealth;
+
+        audio.Play();
     }
 }
